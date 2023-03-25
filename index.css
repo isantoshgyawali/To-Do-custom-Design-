@@ -1,0 +1,722 @@
+
+/*   All the styling of the To-Do design goes here :)    */
+
+*{
+margin: 0;
+padding: 0;
+
+}
+
+body{
+
+ height: 100vh;
+ width: 100vw;
+ overflow: hidden;
+ background:linear-gradient(rgba(15, 14, 14, 0.151),rgba(22, 21, 21, 0.623)), url('bg.jpg');
+ background-position: left;
+ background-repeat: no-repeat;
+background-size :cover;
+
+}
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    
+    }
+
+
+     
+
+/**************  Nav section here   **************************/
+
+nav{
+
+    display: flex;
+    justify-content: space-between;
+    
+    }
+
+.menu-nav{
+
+    height: 3rem;
+    width:100%;
+    border-radius: 2rem 2rem 0rem 0rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+
+}
+
+.menu-btn{
+
+height: 3rem;
+width: 3rem;
+transform: translate(1rem,1rem);
+
+}
+
+.menu-nav span{
+
+transform: translate(-1rem,-1rem);
+
+}
+
+.menu-nav span:nth-child(1){
+
+content: '';
+position: absolute;
+height: .4rem;
+width: 2.4rem;
+border-radius: .5rem;
+top: 1.5rem;
+
+}
+
+.menu-nav span:nth-child(2){
+
+    content: '';
+    position: absolute;
+    height: .35rem;
+    width: 1.8rem;
+    border-radius: .5rem;
+    top: 2.3rem;
+
+}
+
+    .menu-nav span:nth-child(3){
+
+        content: '';
+        position: absolute;
+        height: .35rem;
+        width: 1.4rem;
+        border-radius: .5rem;
+        top: 3rem;
+        
+        }
+
+  .menu-nav a:focus span:nth-child(1)  {
+
+            width: 1.8rem;
+            transition: .4s;
+            background: rgb(0, 255, 136);
+
+            }
+            
+.menu-nav a:focus span:nth-child(2){
+
+width: 2.4rem;
+transition: .5s;
+background: rgb(0, 255, 136);
+
+}
+
+.menu-nav a:focus span:nth-child(3){
+
+    width: 1.8rem;
+    transition: .4s;
+    background: rgb(0, 255, 136);
+    
+    }
+    
+.menu-nav span{
+
+cursor: pointer;
+left: 1.5rem;
+background:rgba(248, 245, 245, 0.904) ;
+
+
+}
+
+
+
+.search{
+
+    position: absolute;
+    color:rgb(255, 255, 255);
+    right: 1.7rem;
+    top: 1.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    }
+
+    .menu {
+
+        background-color: rgb(247, 247, 247);
+        padding: 0 1rem;
+        border-radius: 1rem 2rem 2.5rem 0rem ;
+        height: 22rem;
+        width: 15rem;
+        top:4rem;
+        font-size: 1.3rem;
+        position: fixed;
+        transform: translateX(-25rem);
+        z-index: 1;
+        box-shadow: 0px 8px 30px 1px rgba(0, 0, 0, 0.473);
+        
+        }
+        
+        .menu  .toggle{
+        
+        z-index: 1;
+        display: block;
+        line-height: 4.3rem;
+        font-weight: 600;
+        font-family:nunito,sans-serif;
+        letter-spacing: .2rem;
+        position: relative;
+        top: 1rem;
+        
+        }
+        
+        .menu a {
+        
+        
+        color:rgb(0, 0, 0);
+        font-weight:500;
+        text-decoration: none;
+        transition: .4s;
+        
+        }
+        
+        .menu .toggle::after{
+        
+        content: '';
+        height: .05rem;
+        width:12rem;
+        background-color: rgba(78, 76, 82, 0.945);
+        position: absolute;
+        left:0;
+        top:4.2rem;
+        
+        }
+        
+        .toggle a::before{
+        
+        content:'';
+        height:1.5rem;
+        width:.05rem;
+        position: absolute;
+        background-color:rgb(15, 13, 13);
+        top:1.4rem;
+        left: 1.9rem;
+        
+        
+        }
+
+        .menu ion-icon{
+
+            font-size:1.5rem;
+            top:.2rem;
+            margin-right: 1rem;
+            position:relative;
+            color:rgb(7, 202, 24);
+            float: left;
+            top: 1.2rem;
+            pointer-events: none;
+            
+            }
+            
+            .menu .text a:hover{
+            
+            box-shadow: inset -8rem 0rem rgb(7, 250, 16);
+            border-radius: .4rem;
+            color:rgb(255, 255, 255);
+            padding: 0 .5rem;
+            
+            }
+
+
+            
+
+
+    /*  ********  Box design and other UI objects  ********* */
+
+.box{
+
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+border-radius:2rem;
+height:40rem;
+width: 50rem;
+background: rgba(5, 5, 5, 0.486);
+overflow-y: hidden;
+
+}
+
+h1{
+
+position:absolute ;
+transform: translateX(-50%);
+left: 54%;
+top: .1rem;
+font-size: 3rem;
+color:rgb(0, 255, 136);
+display: flex;
+flex-direction: column;
+font-family: 'Noto Serif Display', serif;               
+
+}
+
+h1::after{
+
+content:  'Write your Own Destiny :)';
+font-size: 1.1rem;
+left: -1rem;
+position: relative;
+font-family: 'Hubballi',cursive;
+color: rgb(255, 255, 255);
+
+}
+
+/*  *****************  Main Motive of the Page   ******************* */
+
+section{
+
+display: flex;
+flex-direction: column;
+font-size: 1.5rem;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+margin-top: 4rem;
+height: 23rem; 
+width: 40rem;
+padding: 1rem 1rem;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+border: 2px dashed rgb(0, 255, 157);
+
+}
+
+#over{
+
+padding: 0rem .3rem;
+
+}
+
+
+#over::-webkit-scrollbar{
+
+position: absolute;
+width: 6px;
+border-radius: 2rem;
+height: 1rem;
+border: 2px solid rgba(21, 255, 0, 0.616);
+
+}
+
+#over::-webkit-scrollbar-thumb {
+
+    background-color: rgba(0, 255, 106, 0.897);
+    border-radius: 10px;
+    overflow: hidden;
+
+  }
+  
+
+#table{
+
+/* border: 1px solid rgb(0, 255, 170); */
+width: 100%;
+
+}
+
+#table tr{
+
+color:rgb(17, 17, 17);
+background: rgba(255, 255, 255, 0.952);
+
+}
+
+#table td {
+
+    padding:.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.678);
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: 'Hubballi' , Courier, monospace;
+}
+
+#table td:nth-child(1){
+
+border-right:1px solid rgba(0, 0, 0, 0.678);
+
+}
+
+#table td:nth-child(3),#table td:nth-child(4){
+
+border-left: 1px solid rgba(0, 0, 0, 0.678) ;
+
+}
+
+
+#table th:nth-child(1){
+
+border-right: 1px solid black;
+border-radius: .5rem 0rem 0rem 0rem ;
+
+}
+
+#table th:nth-child(2){
+
+    border-left: 0 1px solid black;
+    
+    
+    }
+
+    #table th:nth-child(3){
+
+        border-left: 1px solid black;
+        border-radius: 0rem 0rem 0rem 0rem;
+        
+        
+        }
+
+    #table th:nth-child(4){
+
+        border-left: 1px solid black;
+        border-radius: 0rem .5rem 0rem 0rem;
+        
+        
+        }
+
+#table th{
+
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 300;
+    color:rgba(0, 0, 0, 0.842);    
+    padding: 0.3rem 0.5rem;
+background-color: rgb(0, 255, 106);
+
+}
+
+.add-ico{
+
+background: rgb(6, 255, 118);
+color:rgb(255, 255, 255);
+border-radius:50%;
+font-size:1.8rem ;
+font-weight: bold;
+border:2px solid rgb(6, 255, 118);
+
+}
+
+.add-li{
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    top: .7rem;
+    text-decoration: none;
+    Color:rgb(6, 255, 118);
+    
+
+}
+
+.add-li p {
+
+position: relative;
+font-size: 2rem;
+font-family: 'Hubballi', cursive;
+right: .7rem;
+
+}
+
+.add-li:hover .add-ico{
+
+color:rgb(3, 207, 95);
+border: 2px solid rgb(3, 207, 95);
+background: rgb(245, 245, 245);
+transform: rotate(180deg);
+font-size: 1.5;
+transition: .8s;
+
+}
+
+.add-li:hover p{
+
+color:whitesmoke;
+font-size: 1.8rem;
+right: .5rem;
+transition: .1s;
+
+}
+
+/* ******************* Request Box ***************** */
+
+.req{
+
+position: absolute; 
+height: 23rem;
+width: 25rem;
+padding: 1rem 2rem;
+top: 50%; 
+left: 52%;
+transform: translate(-50%,-50%);
+border-radius:.7rem;
+background: rgba(250, 255, 250);
+font-size: 1.5rem;
+display: none;
+
+}
+
+.req form{
+
+display: flex;
+flex-direction: column;
+
+}
+
+.req input {
+
+margin: .5rem 0 1.2rem 0;
+border: none;
+outline: none;
+font-size: 1.2rem;
+font-family: 'Hubballi',Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-weight: 500;
+padding:.2rem .5rem ;
+background: none;
+border-radius: .5rem;
+line-height: 1.5rem;
+color:rgba(0, 0, 0, 0.808);
+
+}
+
+
+.req input:nth-child(2){
+
+    border: 1px solid  rgb(255, 0, 0);
+    
+}
+
+.req input:nth-child(4){
+
+    border: 1px solid rgb(0, 68, 255);
+    
+    }
+
+        .req textarea{
+
+        font-family: 'Hubballi',Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin: .5rem 0;
+        font-size: 1.3rem ;
+        padding:.2rem .5rem ;
+        border: 1px solid rgb(0, 211, 0);
+        outline: none;
+        line-height: 1.2rem;
+            
+      }
+
+.req-txt{
+
+font-family: 'Hubballi', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: 300;
+color:white;
+padding: .2rem .4rem;
+border-radius: .5rem;
+box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.849);
+
+}
+
+.req-txt:nth-child(1){
+
+    width: 3.1rem;
+    background-color: rgba(255, 0, 0, 0.671);
+
+}
+
+.req-txt:nth-child(3){
+
+   
+    width: 3rem;
+    background-color:rgba(0, 68, 255, 0.685);
+}
+
+.req-txt:nth-child(5){
+
+    width: 7rem;
+    background-color:rgba(0, 211, 0, 0.774);
+
+}
+
+
+
+
+.req-txt::before{
+
+content: '';
+position: absolute;
+transform: translate(-1.5rem,.6rem);
+height: .5rem;
+width: .5rem;
+background: rgba(63, 65, 63, 0.863);
+border-radius: 50%;
+
+}
+
+form input[type=submit] {
+
+font-size: 1.2rem;
+color: white;
+background: rgb(0, 179, 74);
+cursor: pointer;
+position: absolute; 
+bottom: 0rem;
+left: 38%;
+transform: translateX(-50%);
+
+}
+
+form input[type=button] {
+
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    background: rgba(44, 41, 41, 0.863);
+    cursor: pointer;
+    position: absolute; 
+    bottom: 0rem;
+    left: 62%;
+    transform: translateX(-50%);
+    
+    }
+
+.ad{
+
+width: 5rem;
+height: 2.5rem;
+border-radius: 2rem;
+font-weight: 200;
+box-shadow: 0px  5px 6px rgba(3, 3, 3, 0.664);
+font-family: 'Varela Round' , 'Courier New', Courier, monospace;
+border: none !important;
+
+}
+
+.reset{
+
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0px  5px 6px rgba(3, 3, 3, 0.719);
+    font-weight: 100;
+    font-family: 'Varela Round' , 'Courier New', Courier, monospace;
+    border: none !important;
+
+}
+
+.req-close{
+
+position: absolute;
+top: -2.5rem;
+right: 0rem;
+height: 2rem;
+transform: scale(1.5);
+z-index:0;
+
+
+}
+
+.close-li{
+
+color: rgb(255, 255, 255);
+font-size: xx-large;
+
+}
+
+.social-links::before {
+
+content: 'Follow us on :';
+position: absolute;
+top: -2rem;
+left: 50%;
+transform: translateX(-50%);
+font-family: cursive;
+text-decoration: underline;
+color:white;
+
+}
+
+.social-links {
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 3rem;
+    width: 17rem;
+    border-radius: 20px;
+    display: flex;
+    cursor: pointer;
+    /* overflow-y: hidden; */
+    
+    }
+    
+    .social-links a{
+    
+    margin-left: 1.5rem;
+    border-radius:50%;
+    /* box-shadow: 2px 2px 4px  rgba(83, 81, 81, 0.541),
+                            0px 0px 8px rgba(0, 0, 0, 0.418); */
+    background-color: rgba(3, 3, 3, 0.322);
+    height: 2.1rem;
+    width: 2.3rem;
+    position: relative;
+    top:.3rem;
+    
+    }
+    
+    .social-links .social{
+    
+    color:rgba(250, 250, 250, 0.596);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: .1s;
+    
+    }
+    
+    .social-links .logo:hover {
+    
+    transition: .2s;
+    
+    }
+    
+    .social-links .fb:hover{
+        
+    background-color: rgba(0, 0, 255, 0.822);
+    
+    }
+    
+    .social-links .inst:hover{
+    
+        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        
+    }
+    
+    .social-links .twt:hover{
+    
+        background-color: rgb(29, 161, 242);
+        
+        }
+    
+        .social-links .git:hover{
+    
+            background-color:rgba(0, 0, 0, 0.89);
+            
+            }
+
+            .social-links .logo:hover  .social{
+
+                color:white;
+        
+                }
+                
+               
